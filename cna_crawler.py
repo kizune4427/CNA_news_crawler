@@ -17,7 +17,6 @@ def date_format(date, index):
     return date.strftime('%Y%m%d') + "{:04d}.aspx".format(index)
 
 
-# add media: img
 def write_to_csv(date, category, title, content):
     with open("cna_news.csv", "a", encoding="utf-8") as f:
         csv_file = csv.writer(f)
@@ -73,8 +72,6 @@ def get_news(year_start, month_start, day_start, n_days):
 
             # content
             contents = []
-
-            # get images
 
             # find div, class_="paragraph"
             paragraphs = root.find('div', class_="paragraph").find_all('p')
